@@ -1,0 +1,125 @@
+" after restart Neovim (or Vim),
+" run `call dein#clear_state() || call dein#update()` to apply changes
+
+" settings before all
+function! BeforeAll()
+
+  " layers
+  let g:navim_settings.layers = [
+          \ 'csv',
+          \ 'langs-misc',
+          \ 'c',
+          \ 'completion',
+          \ 'core',
+          \ 'editing',
+          \ 'indents',
+          \ 'language',
+          \ 'misc',
+          \ 'navigation',
+          \ 'scm',
+          \ 'textobj',
+          \ 'unite',
+          \ 'web']
+
+  " additional plugins
+  let g:navim_settings.additional_plugins = [
+          \ 'scrooloose/nerdcommenter', 
+          \ 'chaoren/vim-wordmotion',
+          \ 'vim-scripts/groovyindent-unix',
+          \ 'junegunn/fzf']
+
+  " disabled plugins
+  let g:navim_settings.disabled_plugins = [
+          \ 'vim-textobj-underscore',
+          \ 'junkfile.vim',
+          \ 'unite-airline_themes',
+          \ 'unite-colorscheme',
+          \ 'unite-help',
+          \ 'unite-tag']
+  " using version from GLOBAL instead
+  call add(g:navim_settings.disabled_plugins, 'vim-scripts/gtags.vim') 
+
+  " core
+  let g:navim_settings.encoding = 'utf-8'
+  let g:navim_settings.default_indent = 4
+  let g:navim_settings.bin_dir = '/usr/local/bin'
+  let g:navim_settings.cscopeprg = 'gtags-cscope'
+  "let g:navim_settings.cscopeprg = 'cscope'
+
+  " plugins
+  let g:navim_settings.completion_autoselect = 1
+  let g:navim_settings.syntaxcheck_autoselect = 0
+  let g:navim_settings.syntaxcheck_plugin = 'ale'
+  let g:navim_settings.explorer_plugin = 'nerdtree'
+  "let g:navim_settings.explorer_plugin = 'vimfiler'
+  let g:navim_settings.statusline_plugin = 'airline'
+  "let g:navim_settings.statusline_plugin = 'lightline'
+
+  " user interface
+  "let g:navim_settings.colorscheme = 'solarized'
+  let g:navim_settings.colorscheme = 'molokai'
+  "let g:navim_settings.colorscheme = 'jellybeans'
+  "let g:navim_settings.colorscheme = 'onedark'
+  let g:navim_settings.force256 = 0
+  let g:navim_settings.termtrans = 0
+  let g:navim_settings.max_column = 120
+  let g:navim_settings.powerline_fonts = 1
+  let g:navim_settings.nerd_fonts = 1
+
+  " disable clang / gcc linters because they do not use compile_commands.json
+  let g:ale_linters = {
+          \   'cpp': ['clangtidy', 'cppcheck', 'cpplint'],
+          \}
+
+endfunction
+
+" settings after all
+function! AfterAll()
+
+  Indent4Space
+  set relativenumber
+  set virtualedit=block
+  " command-line tab completion like in bash
+  set wildmode=list:longest
+  set shellcmdflag+=\ -O\ globstar\ -O\ extglob
+
+  nnoremap <silent> <Leader>bn :bnext<cr>
+  nnoremap <silent> <Leader>bN :bprevious<cr>
+
+  " reset left / right to default
+  nunmap <Left>
+  nunmap <Right>
+
+  " escape insert mode in terminal
+  tnoremap <Esc> <C-\><C-n>
+
+  " move in wrapped lines. includes fix for relativenumber
+  " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+  noremap <expr> j (v:count == 0 ? 'gj' : 'j')
+  noremap <expr> k (v:count == 0 ? 'gk' : 'k')
+  noremap <expr> <Down> (v:count == 0 ? 'g<Down>' : '<Down>')
+  noremap <expr> <Up> (v:count == 0 ? 'g<Up>' : '<Up>')
+  noremap $ g$
+  noremap ^ g^
+
+  " fzf instead of denite (faster)
+  nnoremap <Leader>ff :FZF<CR>
+
+  " grep instead of vimgrep (faster)
+  nnoremap <SID>grep-word-in-directory :silent grep! -r '<cword>' . <CR>:copen<CR>
+  nmap <Leader>sd <SID>grep-word-in-directory
+  nnoremap <SID>grep-in-directory :silent grep! -r '<cword>' . <CR>:copen<CR>
+  nmap <Leader>sgd <SID>grep-in-directory
+  nnoremap <SID>grep-in-filetype :silent grep! '<cword>' **/*.%:e<CR>:copen<CR>
+  nmap <Leader>sgt <SID>grep-in-filetype
+
+  " neomake
+  if g:navim_settings.syntaxcheck_plugin ==# 'neomake'
+    autocmd! BufWritePost * Neomake
+  endif
+
+endfunction
+
+
+" vim: fdm=marker ts=2 sts=2 sw=2 fdl=0
+
