@@ -23,6 +23,7 @@ function! BeforeAll()
 
   " additional plugins
   let g:navim_settings.additional_plugins = [
+          \ 's3rvac/AutoFenc',
           \ 'scrooloose/nerdcommenter', 
           \ 'chaoren/vim-wordmotion',
           \ 'vim-scripts/groovyindent-unix',
@@ -82,6 +83,8 @@ function! AfterAll()
   " command-line tab completion like in bash
   set wildmode=list:longest
   set shellcmdflag+=\ -O\ globstar\ -O\ extglob
+  " keep fold level when switching buffers
+  set foldlevelstart=-1
 
   nnoremap <silent> <Leader>bn :bnext<cr>
   nnoremap <silent> <Leader>bN :bprevious<cr>
