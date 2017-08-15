@@ -23,11 +23,13 @@ function! BeforeAll()
 
   " additional plugins
   let g:navim_settings.additional_plugins = [
+          \ 'vim-scripts/argtextobj.vim',
           \ 's3rvac/AutoFenc',
           \ 'scrooloose/nerdcommenter', 
-          \ 'chaoren/vim-wordmotion',
           \ 'vim-scripts/groovyindent-unix',
           \ 'junegunn/fzf']
+  " better word motion, e.g. camel case
+  call add(g:navim_settings.additional_plugins, 'chaoren/vim-wordmotion')
 
   " disabled plugins
   let g:navim_settings.disabled_plugins = [
