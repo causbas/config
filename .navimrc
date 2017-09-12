@@ -7,7 +7,6 @@ function! BeforeAll()
   " layers
   let g:navim_settings.layers = [
           \ 'csv',
-          \ 'langs-misc',
           \ 'c',
           \ 'completion',
           \ 'core',
@@ -73,6 +72,7 @@ function! BeforeAll()
   let g:ale_linters = {
           \   'cpp': ['clangtidy', 'cppcheck', 'cpplint'],
           \}
+  silent source ~/.navimrc_local
 
 endfunction
 
