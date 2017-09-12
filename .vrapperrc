@@ -49,6 +49,8 @@ nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
 nnoremap [t :bprevious<CR>
 nnoremap ]t :bnext<CR>
+nnoremap [q :PreviousAnnotation<CR>
+nnoremap ]q :NextAnnotation<CR>
 
 " BUFFERS: <Leader>b "{{{
 
@@ -636,6 +638,8 @@ eclipseuiaction ShowRefactoringHistory org.eclipse.ltk.ui.refactor.show.refactor
 "}}}
 
 " NAVIGATE "{{{
+eclipseaction NextAnnotation org.eclipse.ui.navigate.next
+eclipseaction PreviousAnnotation org.eclipse.ui.navigate.previous
 
 "definition ID of the navigate -> open call hierarchy action 
 eclipseuiaction OpenCallHierarchy org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy
