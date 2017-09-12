@@ -9,6 +9,8 @@ set hlsearch
 
 set autochdir
 
+set contentassistmode
+
 " 4 spaces indents
 set tabstop=4
 set shiftwidth=4
