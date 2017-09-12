@@ -43,6 +43,16 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+" camel case stuff
+noremap b <Plug>(subword-back)
+noremap e <Plug>(subword-end)
+noremap w <Plug>(subword-word)
+
+vnoremap iw <Plug>(subword-inner)
+onoremap iw <Plug>(subword-inner)
+vnoremap aw <Plug>(subword-outer)
+onoremap aw <Plug>(subword-outer)
+
 nnoremap <C-j> :bprevious<CR>
 nnoremap <C-k> :bnext<CR>
 nnoremap [b :bprevious<CR>
