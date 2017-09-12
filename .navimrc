@@ -84,9 +84,12 @@ function! AfterAll()
   set virtualedit=block
   " command-line tab completion like in bash
   set wildmode=list:longest
-  set shellcmdflag+=\ -O\ globstar\ -O\ extglob
   " keep fold level when switching buffers
   set foldlevelstart=-1
+
+  if &shell =~ 'bash'
+    set shellcmdflag+=\ -O\ globstar\ -O\ extglob
+  endif
 
   nnoremap <silent> <Leader>bn :bnext<cr>
   nnoremap <silent> <Leader>bN :bprevious<cr>
