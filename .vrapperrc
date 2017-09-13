@@ -26,14 +26,13 @@ set path=src/main/java/**
 nnoremap <Space> <Nop>
 let mapleader='<Space>'
 
-" vim like
-"nnoremap <C-]> :OpenEditor<CR>
-nnoremap ]] :GotoNextMember<CR>
-nnoremap [[ :GotoPreviousMember<CR>
-
 "}}}
 
 " MAPPINGS "{{{
+
+" vim like
+nnoremap ]] :GotoNextMember<CR>
+nnoremap [[ :GotoPreviousMember<CR>
 
 nnoremap Q :q<CR>
 
@@ -61,6 +60,10 @@ nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
 nnoremap [t :bprevious<CR>
 nnoremap ]t :bnext<CR>
+nnoremap [B :tabrewind<CR>
+nnoremap ]B :tablast<CR>
+nnoremap [T :tabrewind<CR>
+nnoremap ]T :tablast<CR>
 nnoremap [q :PreviousAnnotation<CR>
 nnoremap ]q :NextAnnotation<CR>
 
