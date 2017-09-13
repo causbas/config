@@ -247,11 +247,11 @@ nnoremap ,nr :OpenResource<CR>
 
 "}}}
 
-" NAVIGATE/DISPLAY: ,d "{{{
+" NAVIGATE/DISPLAY: ,p "{{{
 
-nnoremap ,dt :OpenHierarchy<CR>
-nnoremap ,do :ShowOutline<CR>
-nnoremap ,ds :OpenStructure<CR>
+nnoremap ,pt :OpenHierarchy<CR>
+nnoremap ,po :ShowOutline<CR>
+nnoremap ,ps :OpenStructure<CR>
 
 "}}}
 
