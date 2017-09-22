@@ -98,8 +98,28 @@ function! AfterAll()
   nunmap <Left>
   nunmap <Right>
 
-  " escape insert mode in terminal
-  tnoremap <Esc> <C-\><C-n>
+  nunmap <C-h>
+  nunmap <C-j>
+  nunmap <C-k>
+  nunmap <C-l>
+  nnoremap <A-h> <C-w>h
+  nnoremap <A-j> <C-w>j
+  nnoremap <A-k> <C-w>k
+  nnoremap <A-l> <C-w>l
+
+  if has('nvim')
+    tnoremap <A-h> <C-\><C-n><C-w>h
+    tnoremap <A-j> <C-\><C-n><C-w>j
+    tnoremap <A-k> <C-\><C-n><C-w>k
+    tnoremap <A-l> <C-\><C-n><C-w>l
+    " escape insert mode in terminal
+    tnoremap <A-[> <C-\><C-n>
+
+    augroup Terminal
+      autocmd!
+      autocmd TermOpen * set relativenumber
+    augroup END
+  endif
 
   " move in wrapped lines. includes fix for relativenumber
   " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
