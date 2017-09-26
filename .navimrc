@@ -86,6 +86,7 @@ function! AfterAll()
   set wildmode=list:longest
   " keep fold level when switching buffers
   set foldlevelstart=-1
+  set clipboard+=unnamedplus
 
   if &shell =~ 'bash'
     set shellcmdflag+=\ -O\ globstar\ -O\ extglob
