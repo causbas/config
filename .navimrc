@@ -115,6 +115,8 @@ function! AfterAll()
     tnoremap <A-l> <C-\><C-n><C-w>l
     " escape insert mode in terminal
     tnoremap <A-[> <C-\><C-n>
+    " env variable can be accessed in shell scripts
+    let $IN_NEOVIM = "true"
 
     augroup Terminal
       autocmd!
