@@ -10,6 +10,7 @@ set hlsearch
 set autochdir
 
 set contentassistmode
+set clipboard+=unnamedplus
 
 " 4 spaces indents
 set tabstop=4
