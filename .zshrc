@@ -39,12 +39,12 @@ fi
 # antigen
 source ~/.zsh/antigen.zsh
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-
 antigen use oh-my-zsh
 antigen bundle z
 source ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/z/z.sh
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
 antigen bundle andrewferrier/fzf-z
 antigen apply
