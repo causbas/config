@@ -176,7 +176,6 @@ nnoremap ,ax :ExternalizeStrings<CR>
 
 nnoremap ,bb :ToggleBreakpoint<CR>
 nnoremap ,bs :ToggleSkipAllBreakpoints<CR>
-nnoremap ,bs :ToggleSkipAllBreakpoints<CR>
 nnoremap ,br :RemoveAllBreakpoints<CR>
 
 "}}}
