@@ -45,6 +45,7 @@ source ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/z/z.sh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-history-substring-search
 
 antigen bundle andrewferrier/fzf-z
 antigen apply
@@ -55,3 +56,5 @@ bindkey '^[f' forward-word
 bindkey '^P' up-line-or-history  
 bindkey '^N' down-line-or-history
 bindkey '^G' fzfz-file-widget
+bindkey '^A' history-substring-search-up
+bindkey '^B' history-substring-search-down
