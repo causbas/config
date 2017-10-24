@@ -56,5 +56,5 @@ bindkey '^[f' forward-word
 bindkey '^P' up-line-or-history  
 bindkey '^N' down-line-or-history
 bindkey '^G' fzfz-file-widget
-bindkey '^A' history-substring-search-up
-bindkey '^B' history-substring-search-down
+bindkey '^[p' history-substring-search-up
+bindkey '^[n' history-substring-search-down
