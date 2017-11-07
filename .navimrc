@@ -117,6 +117,9 @@ function! AfterAll()
     tnoremap <A-[> <C-\><C-n>
     " env variable can be accessed in shell scripts
     let $IN_NEOVIM = "true"
+    set termguicolors
+    " workaround for neovim issue 4151
+    let $FZF_DEFAULT_OPTS .= ' --no-height'
 
     augroup Terminal
       autocmd!
