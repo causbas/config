@@ -4,7 +4,8 @@ fi
 # if in neovim open files in current instance
 if [ "$IN_NEOVIM" = "true" ] && hash nvr;then
     export VISUAL="nvr -cc split --remote-wait"
-    alias nvim="nvr --remote-wait"
+    function nvim-in-nvim-terminal-wrapper() { nvr --remote-wait "$@" &; }
+    alias nvim=nvim-in-nvim-terminal-wrapper
 fi
 
 source ~/.bash_aliases
