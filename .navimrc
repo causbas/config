@@ -87,6 +87,7 @@ function! AfterAll()
   " keep fold level when switching buffers
   set foldlevelstart=-1
   set clipboard+=unnamedplus
+  set title
 
   if &shell =~ 'bash'
     set shellcmdflag+=\ -O\ globstar\ -O\ extglob
