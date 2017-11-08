@@ -6,6 +6,9 @@ if [ "$IN_NEOVIM" = "true" ] && hash nvr;then
     export VISUAL="nvr -cc split --remote-wait"
     function nvim-in-nvim-terminal-wrapper() { nvr --remote-wait "$@" &; }
     alias nvim=nvim-in-nvim-terminal-wrapper
+    function nvcwdsync() { nvr -c "cd $(pwd)"; }
+    # sync buffer-local working directory with shell
+    function chpwd() { nvr -c "lcd $(pwd)"; }
 fi
 
 source ~/.bash_aliases
