@@ -41,14 +41,14 @@ fi
 source ~/.zsh/antigen.zsh
 
 antigen use oh-my-zsh
-antigen bundle z
-source ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/z/z.sh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
 
-antigen bundle andrewferrier/fzf-z
+antigen bundle z
+antigen bundle changyuheng/fz
+
 antigen apply
 
 bindkey -v
@@ -56,6 +56,6 @@ bindkey '^F' autosuggest-accept
 bindkey '^[f' forward-word
 bindkey '^P' up-line-or-history  
 bindkey '^N' down-line-or-history
-bindkey '^G' fzfz-file-widget
 bindkey '^[p' history-substring-search-up
 bindkey '^[n' history-substring-search-down
+source ~/.antigen/bundles/changyuheng/fz/fz.plugin.zsh
