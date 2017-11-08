@@ -104,10 +104,16 @@ function! AfterAll()
   nunmap <C-j>
   nunmap <C-k>
   nunmap <C-l>
+  " focus windows
   nnoremap <A-h> <C-w>h
   nnoremap <A-j> <C-w>j
   nnoremap <A-k> <C-w>k
   nnoremap <A-l> <C-w>l
+  " move windows
+  nnoremap <A-H> <C-w>H
+  nnoremap <A-J> <C-w>J
+  nnoremap <A-K> <C-w>K
+  nnoremap <A-L> <C-w>L
 
   if has('nvim')
     tnoremap <A-h> <C-\><C-n><C-w>h
