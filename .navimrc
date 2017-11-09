@@ -26,7 +26,7 @@ function! BeforeAll()
           \ 's3rvac/AutoFenc',
           \ 'scrooloose/nerdcommenter', 
           \ 'vim-scripts/groovyindent-unix',
-          \ 'junegunn/fzf']
+          \ 'junegunn/fzf.vim']
   " better word motion, e.g. camel case
   call add(g:navim_settings.additional_plugins, 'chaoren/vim-wordmotion')
 
@@ -140,9 +140,12 @@ function! AfterAll()
   noremap $ g$
   noremap ^ g^
 
-  " fzf instead of denite (faster)
-  nnoremap <Leader>ff :FZF<CR>
   nnoremap <CR> o<Esc>
+
+" fzf instead of denite (faster)
+nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>bb :Buffers<CR>
+nnoremap <Leader>fr :History<CR>
 
   " grep instead of vimgrep (faster)
   nnoremap <SID>grep-word-in-directory :silent grep! -r '<cword>' . <CR>:copen<CR>
