@@ -93,9 +93,6 @@ function! AfterAll()
     set shellcmdflag+=\ -O\ globstar\ -O\ extglob
   endif
 
-  nnoremap <silent> <Leader>bn :bnext<cr>
-  nnoremap <silent> <Leader>bN :bprevious<cr>
-
   " reset left / right to default
   nunmap <Left>
   nunmap <Right>
@@ -145,6 +142,7 @@ function! AfterAll()
 
   " fzf instead of denite (faster)
   nnoremap <Leader>ff :FZF<CR>
+  nnoremap <CR> o<Esc>
 
   " grep instead of vimgrep (faster)
   nnoremap <SID>grep-word-in-directory :silent grep! -r '<cword>' . <CR>:copen<CR>
