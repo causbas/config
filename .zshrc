@@ -3,7 +3,7 @@ if [ -z $VISUAL ]; then
 fi
 # if in neovim open files in current instance
 if [ "$IN_NEOVIM" = "true" ] && hash nvr;then
-    export VISUAL="nvr -cc split"
+    export VISUAL="nvr -cc split --remote-wait"
     alias nvim=nvr
     function nvcwdsync() { nvr -c "cd $(pwd)"; }
     # sync buffer-local working directory with shell
