@@ -128,6 +128,7 @@ function! AfterAll()
     augroup Terminal
       autocmd!
       autocmd TermOpen * set relativenumber
+      autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
     augroup END
   endif
 
