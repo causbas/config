@@ -141,7 +141,7 @@ function! AfterAll()
   noremap $ g$
   noremap ^ g^
 
-  nnoremap <CR> o<Esc>
+  nnoremap <A-CR> o<Esc>
 
 " fzf instead of denite (faster)
 nnoremap <Leader>ff :Files<CR>
