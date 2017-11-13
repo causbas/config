@@ -143,10 +143,14 @@ function! AfterAll()
 
   nnoremap <A-CR> o<Esc>
 
-" fzf instead of denite (faster)
-nnoremap <Leader>ff :Files<CR>
-nnoremap <Leader>bb :Buffers<CR>
-nnoremap <Leader>fr :History<CR>
+  " fzf
+  nnoremap <Leader>ff :Files<CR>
+  nnoremap <Leader>bb :Buffers<CR>
+  nnoremap <Leader>fr :History<CR>
+  nnoremap <Leader>gf :GFiles<CR>
+  cnoremap <A-:> History:<CR>
+  nnoremap <A-:> History:<CR>
+  nnoremap <A-/> History/<CR>
 
   " grep instead of vimgrep (faster)
   nnoremap <SID>grep-word-in-directory :silent grep! -r '<cword>' . <CR>:copen<CR>
