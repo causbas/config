@@ -5,8 +5,8 @@ fi
 if [ "$IN_NEOVIM" = "true" ] && hash nvr;then
     export VISUAL="nvr -cc split --remote-wait"
     alias nvim=nvr
-    alias nvsplit="nvr -cc split"
-    alias nvvsplit="nvr -cc vsplit"
+    function nvsplit() { nvr -c "split $@" }
+    function nvvsplit() { nvr -c "vsplit $@" }
     function nvcwdsync() { nvr -c "cd $(pwd)"; }
     # sync buffer-local working directory with shell
     function chpwd() { nvr -c "lcd $(pwd)"; }
