@@ -118,7 +118,6 @@ function! AfterAll()
     tnoremap <A-j> <C-\><C-n><C-w>j
     tnoremap <A-k> <C-\><C-n><C-w>k
     tnoremap <A-l> <C-\><C-n><C-w>l
-    tnoremap <C-w> <C-\><C-n><C-w>
     " escape insert mode in terminal
     tnoremap <A-[> <C-\><C-n>
     " env variable can be accessed in shell scripts
