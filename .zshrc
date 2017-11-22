@@ -41,25 +41,22 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 
-# antigen
-source ~/.zsh/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-history-substring-search
-
-antigen bundle z
-antigen bundle changyuheng/fz
-
-antigen apply
-
 bindkey -v
 bindkey '^F' autosuggest-accept
 bindkey '^[f' forward-word
-bindkey '^P' up-line-or-history  
-bindkey '^N' down-line-or-history
+bindkey '^P' up-history  
+bindkey '^N' down-history
 bindkey '^[p' history-substring-search-up
 bindkey '^[n' history-substring-search-down
-source ~/.antigen/bundles/changyuheng/fz/fz.plugin.zsh
+
+# zplug
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search"
+
+zplug "changyuheng/fz", defer:1
+zplug "rupa/z", use:z.sh
+
+zplug load
