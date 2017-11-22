@@ -22,7 +22,8 @@ zstyle ':completion:*' max-errors 2 numeric
 zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
-compinit
+#compinit # run from zplug
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -44,7 +45,7 @@ fi
 bindkey -v
 bindkey '^F' autosuggest-accept
 bindkey '^[f' forward-word
-bindkey '^P' up-history  
+bindkey '^P' up-history
 bindkey '^N' down-history
 bindkey '^[p' history-substring-search-up
 bindkey '^[n' history-substring-search-down
@@ -52,11 +53,18 @@ bindkey '^[n' history-substring-search-down
 # zplug
 source ~/.zplug/init.zsh
 
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh
 
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 zplug load
