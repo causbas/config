@@ -60,6 +60,11 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh
 
+zplug "junegunn/8b572b8d4b5eddd8b85e5f4d40f17236", \
+    from:gist, \
+    as:plugin, \
+    use:"{functions.sh,key-binding.zsh}"
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
