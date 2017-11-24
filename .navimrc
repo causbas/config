@@ -157,9 +157,8 @@ function! AfterAll()
   nnoremap <Leader>bb :Buffers<CR>
   nnoremap <Leader>fr :History<CR>
   nnoremap <Leader>gf :GFiles<CR>
-  cnoremap <M-:> History:<CR>
-  nnoremap <M-:> History:<CR>
-  nnoremap <M-/> History/<CR>
+  nnoremap <Leader>sh :History/<CR>
+  nnoremap <M-;> :History:<CR>
 
   " grep instead of vimgrep (faster)
   nnoremap <SID>grep-word-in-directory :silent grep! -r '<cword>' . <CR>:copen<CR>
