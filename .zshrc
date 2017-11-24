@@ -73,3 +73,5 @@ if ! zplug check --verbose; then
     fi
 fi
 zplug load
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[path]='bold'
