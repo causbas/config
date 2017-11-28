@@ -2,6 +2,7 @@
 
 export VISUAL="nvr -cc split --remote-wait"
 alias nvim=nvr
+alias nvwindow="nvr -cc 'wincmd w'"
 function nvsplit() { nvr -c "split $@" }
 function nvvsplit() { nvr -c "vsplit $@" }
 function nvcwdsync() { nvr -c "cd $(pwd)"; }
