@@ -1,15 +1,8 @@
 if [ -z $VISUAL ]; then
     export VISUAL=/usr/bin/nvim
 fi
-# if in neovim open files in current instance
 if [ "$IN_NEOVIM" = "true" ] && hash nvr;then
-    export VISUAL="nvr -cc split --remote-wait"
-    alias nvim=nvr
-    function nvsplit() { nvr -c "split $@" }
-    function nvvsplit() { nvr -c "vsplit $@" }
-    function nvcwdsync() { nvr -c "cd $(pwd)"; }
-    # sync buffer-local working directory with shell
-    function chpwd() { nvr -c "lcd $(pwd)"; }
+    source ~/.nvr_aliases
 fi
 
 source ~/.bash_aliases
