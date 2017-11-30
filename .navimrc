@@ -124,6 +124,7 @@ function! AfterAll()
     tnoremap <M-J> <C-\><C-n><C-w>Ji
     tnoremap <M-K> <C-\><C-n><C-w>Ki
     tnoremap <M-L> <C-\><C-n><C-w>Li
+    tnoremap <M-CR> <C-\><C-n>:terminal<CR>
     " scrolling
     tnoremap <S-PageUp> <C-\><C-n><PageUp>
     tnoremap <S-PageDown> <C-\><C-n><PageDown>
