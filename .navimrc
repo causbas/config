@@ -12,6 +12,7 @@ function! BeforeAll()
           \ 'core',
           \ 'editing',
           \ 'indents',
+          \ 'java',
           \ 'language',
           \ 'misc',
           \ 'navigation',
