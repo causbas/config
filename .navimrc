@@ -137,7 +137,6 @@ function! AfterAll()
 
     augroup Terminal
       autocmd!
-      autocmd WinEnter * if &buftype == 'terminal' | :startinsert | endif
       " fix for terminal disabling relativenumber
       autocmd BufEnter *  :set relativenumber
     augroup END
