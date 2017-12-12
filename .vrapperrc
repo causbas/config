@@ -34,6 +34,7 @@ let mapleader='<Space>'
 " vim like
 nnoremap ]] :GotoNextMember<CR>
 nnoremap [[ :GotoPreviousMember<CR>
+nnoremap zO zo
 
 nnoremap Q :q<CR>
 
