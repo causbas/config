@@ -68,6 +68,8 @@ nnoremap [T :tabrewind<CR>
 nnoremap ]T :tablast<CR>
 nnoremap [q :PreviousAnnotation<CR>
 nnoremap ]q :NextAnnotation<CR>
+nnoremap [e :m .+1<CR>==
+nnoremap ]e :m .-2<CR>==
 
 " BUFFERS: <Leader>b "{{{
 
