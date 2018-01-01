@@ -138,7 +138,7 @@ function! AfterAll()
     augroup Terminal
       autocmd!
       " fix for terminal disabling relativenumber
-      autocmd BufEnter *  :set relativenumber
+      autocmd TermOpen *  :set relativenumber
     augroup END
   endif
 
