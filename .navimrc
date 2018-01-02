@@ -35,6 +35,7 @@ function! BeforeAll()
   let g:navim_settings.disabled_plugins = [
           \ 'vim-textobj-underscore',
           \ 'junkfile.vim',
+          \ 'coffeetags',
           \ 'unite-airline_themes',
           \ 'unite-colorscheme',
           \ 'unite-help',
