@@ -160,12 +160,13 @@ function! AfterAll()
   nnoremap <Leader>fr :History<CR>
   nnoremap <Leader>gf :GFiles<CR>
   nnoremap <Leader>sh :History/<CR>
+  nnoremap <M-;> :History:<CR>
 
   " ripgrep
   set grepprg=rg\ --vimgrep
   set grepformat^=%f:%l:%c:%m
   " https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --color "always" '.shellescape(<q-args>), 1, <bang>0) nnoremap <M-;> :History:<CR>
+  command! -bang -nargs=* Search call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
   " grep instead of vimgrep (faster)
   nnoremap <SID>grep-word-in-directory :silent grep! -r '<cword>' . <CR>:copen<CR>
