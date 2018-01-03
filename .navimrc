@@ -160,7 +160,7 @@ function! AfterAll()
   nnoremap <Leader>fr :History<CR>
   nnoremap <Leader>gf :GFiles<CR>
   nnoremap <Leader>sh :History/<CR>
-  nnoremap <M-;> :History:<CR>
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0) nnoremap <M-;> :History:<CR>
 
   " grep instead of vimgrep (faster)
   nnoremap <SID>grep-word-in-directory :silent grep! -r '<cword>' . <CR>:copen<CR>
