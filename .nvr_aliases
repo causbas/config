@@ -8,3 +8,4 @@ function nvvsplit() { nvr -c "vsplit $@" }
 function nvcwdsync() { nvr -c "cd $(pwd)"; }
 # sync buffer-local working directory with shell
 function chpwd() { nvr -c "lcd $(pwd)"; }
+alias rg="rg --no-heading"
