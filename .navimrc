@@ -11,6 +11,7 @@ function! BeforeAll()
           \ 'completion',
           \ 'core',
           \ 'editing',
+          \ 'fzf',
           \ 'indents',
           \ 'java',
           \ 'language',
@@ -26,8 +27,7 @@ function! BeforeAll()
           \ 'vim-scripts/argtextobj.vim',
           \ 's3rvac/AutoFenc',
           \ 'scrooloose/nerdcommenter', 
-          \ 'vim-scripts/groovyindent-unix',
-          \ 'junegunn/fzf.vim']
+          \ 'vim-scripts/groovyindent-unix']
   " better word motion, e.g. camel case
   call add(g:navim_settings.additional_plugins, 'chaoren/vim-wordmotion')
 
