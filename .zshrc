@@ -64,6 +64,19 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 
+# Updates editor information when the keymap changes.
+function zle-keymap-select() {
+  zle reset-prompt
+  zle -R
+}
+
+# Ensure that the prompt is redrawn when the terminal size changes.
+TRAPWINCH() {
+  zle &&  zle -R
+}
+
+zle -N zle-keymap-select
+zle -N edit-command-line
 bindkey -v
 bindkey '^F' autosuggest-accept
 bindkey '^[f' forward-word
@@ -74,6 +87,7 @@ bindkey '^[n' history-substring-search-down
 
 # zplug
 source ~/.zplug/init.zsh
+zplug "bhilburn/powerlevel9k", as:theme
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
@@ -97,3 +111,41 @@ fi
 zplug load
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[path]='bold'
+
+# powerlevel9k config
+POWERLEVEL9K_MODE='nerdfont-complete'
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir vcs)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+
+# Elementos de la barra
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
+POWERLEVEL9K_FOLDER_ICON=""
+POWERLEVEL9K_HOME_ICON=""
+POWERLEVEL9K_HOME_SUB_ICON=""
+POWERLEVEL9K_DIR_PATH_SEPARATOR=" $(print_icon "LEFT_SUBSEGMENT_SEPARATOR") "
+
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND="red"
+POWERLEVEL9K_STATUS_ERROR_FOREGROUND="yellow"
+
+POWERLEVEL9K_DIR_HOME_BACKGROUND='243'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='243'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='243'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='white'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
+
+# `git hub colors`
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='236'
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='255'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='236'
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='255'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='236'
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='255'
+
+# Vi-Mode
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='075'
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='233'
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='221'
+POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='233'
