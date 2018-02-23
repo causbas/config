@@ -84,6 +84,7 @@ bindkey '^P' up-history
 bindkey '^N' down-history
 bindkey '^[p' history-substring-search-up
 bindkey '^[n' history-substring-search-down
+export KEYTIMEOUT=1
 
 # zplug
 source ~/.zplug/init.zsh
