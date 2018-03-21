@@ -1,5 +1,6 @@
 *.bak
 *.log
+.ignore
 
 ### VIM ###
 # swap
