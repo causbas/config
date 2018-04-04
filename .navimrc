@@ -192,6 +192,9 @@ command! -bang -nargs=* Search
     autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
   augroup END
 
+  augroup ChangeWorkingDirectoryWhenEnteringBuffer
+    autocmd BufEnter * silent! lcd %:p:h
+  augroup END
 endfunction
 
 
