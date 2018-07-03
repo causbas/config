@@ -151,8 +151,15 @@ function! AfterAll()
   noremap <expr> k (v:count == 0 ? 'gk' : 'k')
   noremap <expr> <Down> (v:count == 0 ? 'g<Down>' : '<Down>')
   noremap <expr> <Up> (v:count == 0 ? 'g<Up>' : '<Up>')
-  noremap $ g$
-  noremap ^ g^
+
+  nnoremap $ g$
+  nnoremap g$ $
+  nnoremap ^ g^
+  nnoremap g^ ^
+  vnoremap $ g$
+  vnoremap g$ $
+  vnoremap ^ g^
+  vnoremap g^ ^
 
   nnoremap <M-CR> o<Esc>
 
