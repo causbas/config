@@ -30,6 +30,7 @@ function! BeforeAll()
           \ 'vim-scripts/groovyindent-unix']
   " better word motion, e.g. camel case
   call add(g:navim_settings.additional_plugins, 'chaoren/vim-wordmotion')
+  call add(g:navim_settings.additional_plugins, 'AndrewRadev/linediff.vim')
 
   " disabled plugins
   let g:navim_settings.disabled_plugins = [
