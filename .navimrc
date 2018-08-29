@@ -115,6 +115,8 @@ function! AfterAll()
   nnoremap <M-K> <C-w>K
   nnoremap <M-L> <C-w>L
 
+  nnoremap \ ,
+
   if has('nvim')
     " escape insert mode in terminal
     tnoremap <M-[> <C-\><C-n>
