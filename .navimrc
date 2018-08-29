@@ -145,22 +145,6 @@ function! AfterAll()
     augroup END
   endif
 
-  " move in wrapped lines. includes fix for relativenumber
-  " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
-  noremap <expr> j (v:count == 0 ? 'gj' : 'j')
-  noremap <expr> k (v:count == 0 ? 'gk' : 'k')
-  noremap <expr> <Down> (v:count == 0 ? 'g<Down>' : '<Down>')
-  noremap <expr> <Up> (v:count == 0 ? 'g<Up>' : '<Up>')
-
-  nnoremap $ g$
-  nnoremap g$ $
-  nnoremap ^ g^
-  nnoremap g^ ^
-  vnoremap $ g$
-  vnoremap g$ $
-  vnoremap ^ g^
-  vnoremap g^ ^
-
   nnoremap <M-CR> o<Esc>
 
   " fzf
