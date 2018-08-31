@@ -120,6 +120,17 @@ function! AfterAll()
   nnoremap j j
   nnoremap k k
 
+  " camel case
+  let g:wordmotion_mappings = {
+  \ 'w' : '<M-w>',
+  \ 'b' : '<M-b>',
+  \ 'e' : '<M-e>',
+  \ 'ge' : 'g<M-e>',
+  \ 'aw' : 'a<Leader>',
+  \ 'iw' : 'i<Leader>',
+  \ '<C-R><C-W>' : '<C-R><M-w>'
+  \ }
+
   if has('nvim')
     " escape insert mode in terminal
     tnoremap <M-[> <C-\><C-n>
