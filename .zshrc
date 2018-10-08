@@ -32,7 +32,7 @@ fi
 if [ -z $VISUAL ]; then
     export VISUAL=/usr/bin/nvim
 fi
-if [ "$IN_NEOVIM" = "true" ] && hash nvr;then
+if [ "$IN_NEOVIM" = "true" ]; then
     source ~/.nvr_aliases
 fi
 
