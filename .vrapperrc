@@ -301,35 +301,6 @@ onoremap a<Leader> <Plug>(subword-outer)
 
 "}}}
 
-" sneak.vim "{{{
-
-nnoremap s <Plug>(sneak_s)
-nnoremap S <Plug>(sneak_S)
-
-nnoremap ; <Plug>(sneak-next)
-nnoremap , <Plug>(sneak-prev)
-
-vnoremap s <Plug>(sneak_s)
-vnoremap Z <Plug>(sneak_S)
-
-vnoremap ; <Plug>(sneak-next)
-vnoremap , <Plug>(sneak-prev)
-
-nnoremap f <Plug>(sneak_f)
-nnoremap F <Plug>(sneak_F)
-nnoremap t <Plug>(sneak_t)
-nnoremap T <Plug>(sneak_T)
-
-vnoremap f <Plug>(sneak_f)
-vnoremap F <Plug>(sneak_F)
-vnoremap t <Plug>(sneak_t)
-vnoremap T <Plug>(sneak_T)
-
-onoremap z <Plug>(sneak_s)
-onoremap Z <Plug>(sneak_S)
-
-"}}}
-
 "}}}
 
 "}}}
