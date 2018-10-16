@@ -160,6 +160,8 @@ function! AfterAll()
       " fix for terminal disabling relativenumber
       autocmd TermOpen *  :set relativenumber
     augroup END
+
+    set inccommand=nosplit
   endif
 
   nnoremap <M-CR> o<Esc>
