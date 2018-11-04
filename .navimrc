@@ -29,8 +29,6 @@ function! BeforeAll()
           \ 'scrooloose/nerdcommenter', 
           \ 'vim-scripts/groovyindent-unix',
           \ 'machakann/vim-highlightedyank']
-  " better word motion, e.g. camel case
-  call add(g:navim_settings.additional_plugins, 'chaoren/vim-wordmotion')
   call add(g:navim_settings.additional_plugins, 'AndrewRadev/linediff.vim')
 
   " disabled plugins
