@@ -58,6 +58,27 @@ scriptencoding utf-8
       let g:airline_powerline_fonts = 1
       let g:airline#extensions#tabline#fnamecollapse = 1
       let g:airline#extensions#tabline#enabled = 1
+      let g:airline#extensions#tabline#fnametruncate = 12
+
+  let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'c'  : 'C',
+      \ 'i'  : 'I',
+      \ 'ic' : 'I',
+      \ 'ix' : 'I',
+      \ 'n'  : 'N',
+      \ 'ni' : 'N',
+      \ 'no' : 'N',
+      \ 'R'  : 'R',
+      \ 'Rv' : 'R',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ 't'  : 'T',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ }
     " }}}
     Plug 'vim-airline/vim-airline-themes'
     Plug 'milkypostman/vim-togglelist' " {{{
@@ -96,9 +117,14 @@ scriptencoding utf-8
   filetype plugin indent on
   syntax enable
   let mapleader = ' '
-  colorscheme darcula
   let g:airline_theme='molokai'
   set noswapfile
+  set hidden
+  set ignorecase
+  set smartcase
+  "call AutoHighlightToggle()
+  set inccommand=nosplit
+  set foldmethod=syntax  " fold via syntax of files
 
   " indent {{{
     set expandtab
@@ -115,6 +141,7 @@ scriptencoding utf-8
   " }}}
 
   " ui {{{
+    colorscheme darcula
     set mouse=a  " enable mouse
     set number
     set relativenumber
@@ -129,14 +156,7 @@ scriptencoding utf-8
     set foldlevelstart=-1
     set clipboard+=unnamedplus
     set title
-    set hidden
-    set ignorecase
-    set smartcase
-    "call AutoHighlightToggle()
-    set inccommand=nosplit
-
-    set noshelltemp  " use pipes
-    set foldmethod=syntax  " fold via syntax of files
+    set noshowmode
 
     set scrolloff=10  " minimum number of lines above and below cursor
     set scrolljump=1  "minimum number of lines to scroll
@@ -151,6 +171,7 @@ scriptencoding utf-8
   " }}}
 
   " shell {{{
+    set noshelltemp  " use pipes
     set shell=/bin/zsh
     if &shell =~? 'bash'
       set shellcmdflag+=\ -O\ globstar\ -O\ extglob
