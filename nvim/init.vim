@@ -42,6 +42,9 @@ scriptencoding utf-8
     Plug 'kana/vim-textobj-entire'
     Plug 'lucapette/vim-textobj-underscore'
   " }}}
+  " scm {{{
+  Plug 'mhinz/vim-signify'
+  " }}}
   " ui {{{
     Plug 'isobit/vim-darcula-colors'
     Plug 'tomasr/molokai'
