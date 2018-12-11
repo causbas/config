@@ -60,6 +60,9 @@ scriptencoding utf-8
       let g:airline#extensions#tabline#enabled = 1
     " }}}
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'milkypostman/vim-togglelist' " {{{
+      let g:toggle_list_no_mappings = 1
+    " }}}
   " }}}
   call plug#end()
 " }}}
@@ -150,6 +153,11 @@ scriptencoding utf-8
       set shellcmdflag+=\ -O\ globstar\ -O\ extglob
     endif
   " }}}
+  " tools {{{
+    " ripgrep
+    set grepprg=rg\ --vimgrep
+    set grepformat^=%f:%l:%c:%m
+  " }}}
 " }}}
 " mappings {{{
   nnoremap <M-CR> o<Esc>
@@ -168,6 +176,9 @@ scriptencoding utf-8
     nnoremap <M-J> <C-w>J
     nnoremap <M-K> <C-w>K
     nnoremap <M-L> <C-w>L
+    " toggle
+    nnoremap <script> <silent> <leader>tl :call ToggleLocationList()<CR>
+    nnoremap <script> <silent> <leader>tq :call ToggleQuickfixList()<CR>
   " }}}
   " tools {{{
     " fzf
@@ -177,10 +188,6 @@ scriptencoding utf-8
     nnoremap <Leader>gf :GFiles<CR>
     nnoremap <Leader>sh :History/<CR>
     nnoremap <M-;> :History:<CR>
-
-    " ripgrep
-    set grepprg=rg\ --vimgrep
-    set grepformat^=%f:%l:%c:%m
   " }}}
 " }}}
 " terminal {{{
