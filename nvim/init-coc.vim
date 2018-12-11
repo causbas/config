@@ -48,8 +48,6 @@
 
   " Remap for do codeAction of current line
   nmap <leader>aa  <Plug>(coc-codeaction)
-
-  nmap <C-]> <Plug>(coc-definition)
 " }}}
 
 " augroups {{{
@@ -60,6 +58,8 @@ augroup coc-group
 
   " Highlight symbol under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
+
+  autocmd FileType typescript nmap <buffer> <silent> <C-]> <Plug>(coc-definition)
 augroup END
 " }}}
 
