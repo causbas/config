@@ -1,0 +1,8 @@
+{
+    "tsserver.log": "verbose",
+    "typescript.validate.enable": true,
+    "coc.preferences.diagnostic.errorSign": "⨉",
+    "coc.preferences.diagnostic.warningSign": "⚠",
+    "coc.preferences.diagnostic.infoSign": "..",
+    "coc.preferences.diagnostic.hintSign": "!!"
+}
