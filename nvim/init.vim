@@ -7,10 +7,7 @@ scriptencoding utf-8
       "let g:deoplete#enable_at_startup = 1
     "" }}}
     Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " {{{
-      let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-      let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
     " }}}
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
   " }}}
   " editing {{{
     Plug 'editorconfig/editorconfig-vim'
@@ -66,6 +63,7 @@ scriptencoding utf-8
   " }}}
   call plug#end()
 " }}}
+
 " functions {{{
   " Highlight all instances of word under cursor, when idle.
   " Useful when studying strange source code.
@@ -88,7 +86,9 @@ scriptencoding utf-8
       return 1
     endif
   endfunction
+
 " }}}
+
 "settings {{{
   filetype plugin indent on
   syntax enable
@@ -107,7 +107,7 @@ scriptencoding utf-8
   " }}}
 
   " key timeout {{{
-    set timeoutlen=300  " mapping timeout
+    set timeoutlen=500  " mapping timeout
     set ttimeoutlen=50  " keycode timeout
   " }}}
 
@@ -159,6 +159,7 @@ scriptencoding utf-8
     set grepformat^=%f:%l:%c:%m
   " }}}
 " }}}
+
 " mappings {{{
   nnoremap <M-CR> o<Esc>
   nnoremap Y y$
@@ -181,15 +182,17 @@ scriptencoding utf-8
     nnoremap <script> <silent> <leader>tq :call ToggleQuickfixList()<CR>
   " }}}
   " tools {{{
-    " fzf
+    " fzf {{{
     nnoremap <Leader>ff :Files<CR>
     nnoremap <Leader>bb :Buffers<CR>
     nnoremap <Leader>fr :History<CR>
     nnoremap <Leader>gf :GFiles<CR>
     nnoremap <Leader>sh :History/<CR>
     nnoremap <M-;> :History:<CR>
+    " }}}
   " }}}
 " }}}
+
 " terminal {{{
   " escape insert mode in terminal
   tnoremap <M-[> <C-\><C-n>
@@ -220,6 +223,7 @@ scriptencoding utf-8
     autocmd TermOpen *  :set relativenumber
   augroup END
 " }}}
+
 " augroups {{{
   " will prevent help window from opening if buffer list is empty
   "augroup QuitAfterDeletingLastBuffer
@@ -233,4 +237,5 @@ scriptencoding utf-8
   augroup END
 " }}}
 
+source ~/.config/nvim/init-coc.vim
 " vim: fdm=marker ts=2 sts=2 sw=2 fdl=0
