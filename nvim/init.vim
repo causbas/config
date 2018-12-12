@@ -240,12 +240,6 @@ scriptencoding utf-8
   highlight Cursorline guifg=NONE
   " workaround for neovim issue 4151
   let $FZF_DEFAULT_OPTS .= ' --no-height'
-
-  augroup Terminal
-    autocmd!
-    " fix for terminal disabling relativenumber
-    autocmd TermOpen *  :set relativenumber
-  augroup END
 " }}}
 
 " augroups {{{
