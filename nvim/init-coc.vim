@@ -22,10 +22,6 @@
 " }}}
 
 " mappings {{{
-  " Use `[c` and `]c` for navigate diagnostics
-  nmap <silent> [c <Plug>(coc-diagnostic-prev)
-  nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
   " Remap keys for gotos
   nmap <silent> <Leader>gd <Plug>(coc-definition)
   nmap <silent> <Leader>gy <Plug>(coc-type-definition)
