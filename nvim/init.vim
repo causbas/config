@@ -44,6 +44,7 @@ scriptencoding utf-8
   " }}}
   " scm {{{
   Plug 'mhinz/vim-signify'
+  Plug 'tpope/vim-fugitive'
   " }}}
   " ui {{{
     Plug 'isobit/vim-darcula-colors'
