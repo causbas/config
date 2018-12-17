@@ -1,5 +1,77 @@
 scriptencoding utf-8
 
+"settings {{{
+  filetype plugin indent on
+  syntax enable
+  let mapleader = ' '
+  let g:airline_theme='molokai'
+  set noswapfile
+  set hidden
+  set ignorecase
+  set smartcase
+  "call AutoHighlightToggle()
+  set inccommand=nosplit
+  set foldmethod=syntax  " fold via syntax of files
+  set showmatch
+  set matchtime=2
+
+  " indent {{{
+    set expandtab
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set shiftround
+    set linebreak
+  " }}}
+
+  " key timeout {{{
+    set timeoutlen=500  " mapping timeout
+    set ttimeoutlen=50  " keycode timeout
+  " }}}
+
+  " ui {{{
+    set mouse=a  " enable mouse
+    set number
+    set relativenumber
+    set virtualedit=block
+    " command-line tab completion like in bash
+    set wildmode=list:longest
+    set wildignore+=*~,*.o,core.*,*.exe,.git/,.hg/,.svn/,.DS_Store,*.pyc
+    set wildignore+=*.swp,*.swo,*.class,*.tags,tags,tags-*,cscope.*,*.taghl
+    set wildignore+=.ropeproject/,__pycache__/,venv/,*.min.*,images/,img/,fonts/
+    set wildignorecase
+    " keep fold level when switching buffers
+    set foldlevelstart=-1
+    set clipboard+=unnamedplus
+    set title
+    set noshowmode
+
+    set scrolloff=10  " minimum number of lines above and below cursor
+    set scrolljump=1  "minimum number of lines to scroll
+    set sidescrolloff=5  " minimum number of columns to left and right of cursor
+    set display+=lastline
+    set cursorline
+    augroup CursorLine
+      autocmd!
+      autocmd WinLeave * setlocal nocursorline
+      autocmd WinEnter * setlocal cursorline
+    augroup END
+  " }}}
+
+  " shell {{{
+    set noshelltemp  " use pipes
+    set shell=/bin/zsh
+    if &shell =~? 'bash'
+      set shellcmdflag+=\ -O\ globstar\ -O\ extglob
+    endif
+  " }}}
+  " tools {{{
+    " ripgrep
+    set grepprg=rg\ --vimgrep
+    set grepformat^=%f:%l:%c:%m
+  " }}}
+" }}}
+
 " plugins {{{
   call plug#begin('~/.local/share/nvim/plugged')
   " completion {{{
@@ -7,6 +79,7 @@ scriptencoding utf-8
       "let g:deoplete#enable_at_startup = 1
     "" }}}
     Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " {{{
+      source ~/.config/nvim/init-coc.vim
     " }}}
   " }}}
   " editing {{{
@@ -86,6 +159,8 @@ scriptencoding utf-8
     " }}}
   " }}}
   call plug#end()
+
+  colorscheme darcula-mine
 " }}}
 
 " functions {{{
@@ -111,79 +186,6 @@ scriptencoding utf-8
     endif
   endfunction
 
-" }}}
-
-"settings {{{
-  filetype plugin indent on
-  syntax enable
-  let mapleader = ' '
-  let g:airline_theme='molokai'
-  set noswapfile
-  set hidden
-  set ignorecase
-  set smartcase
-  "call AutoHighlightToggle()
-  set inccommand=nosplit
-  set foldmethod=syntax  " fold via syntax of files
-  set showmatch
-  set matchtime=2
-
-  " indent {{{
-    set expandtab
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
-    set shiftround
-    set linebreak
-  " }}}
-
-  " key timeout {{{
-    set timeoutlen=500  " mapping timeout
-    set ttimeoutlen=50  " keycode timeout
-  " }}}
-
-  " ui {{{
-    colorscheme darcula
-    set mouse=a  " enable mouse
-    set number
-    set relativenumber
-    set virtualedit=block
-    " command-line tab completion like in bash
-    set wildmode=list:longest
-    set wildignore+=*~,*.o,core.*,*.exe,.git/,.hg/,.svn/,.DS_Store,*.pyc
-    set wildignore+=*.swp,*.swo,*.class,*.tags,tags,tags-*,cscope.*,*.taghl
-    set wildignore+=.ropeproject/,__pycache__/,venv/,*.min.*,images/,img/,fonts/
-    set wildignorecase
-    " keep fold level when switching buffers
-    set foldlevelstart=-1
-    set clipboard+=unnamedplus
-    set title
-    set noshowmode
-
-    set scrolloff=10  " minimum number of lines above and below cursor
-    set scrolljump=1  "minimum number of lines to scroll
-    set sidescrolloff=5  " minimum number of columns to left and right of cursor
-    set display+=lastline
-    set cursorline
-    augroup CursorLine
-      autocmd!
-      autocmd WinLeave * setlocal nocursorline
-      autocmd WinEnter * setlocal cursorline
-    augroup END
-  " }}}
-
-  " shell {{{
-    set noshelltemp  " use pipes
-    set shell=/bin/zsh
-    if &shell =~? 'bash'
-      set shellcmdflag+=\ -O\ globstar\ -O\ extglob
-    endif
-  " }}}
-  " tools {{{
-    " ripgrep
-    set grepprg=rg\ --vimgrep
-    set grepformat^=%f:%l:%c:%m
-  " }}}
 " }}}
 
 " mappings {{{
@@ -255,5 +257,4 @@ scriptencoding utf-8
   augroup END
 " }}}
 
-source ~/.config/nvim/init-coc.vim
 " vim: fdm=marker ts=2 sts=2 sw=2 fdl=0

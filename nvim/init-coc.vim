@@ -18,7 +18,6 @@
   let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
   let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
-  highlight CocHighlightText ctermbg=65 guibg=#344134
 " }}}
 
 " mappings {{{
@@ -56,6 +55,7 @@ augroup coc-group
   autocmd CursorHold * silent call CocActionAsync('highlight')
 
   autocmd FileType typescript nmap <buffer> <silent> <C-]> <Plug>(coc-definition)
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup END
 " }}}
 
