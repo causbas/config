@@ -125,6 +125,8 @@ scriptencoding utf-8
   "call AutoHighlightToggle()
   set inccommand=nosplit
   set foldmethod=syntax  " fold via syntax of files
+  set showmatch
+  set matchtime=2
 
   " indent {{{
     set expandtab
