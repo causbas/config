@@ -238,8 +238,6 @@ scriptencoding utf-8
   set termguicolors
   set scrollback=100000
   highlight Cursorline guifg=NONE
-  " workaround for neovim issue 4151
-  let $FZF_DEFAULT_OPTS .= ' --no-height'
 " }}}
 
 " augroups {{{
