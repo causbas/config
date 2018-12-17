@@ -47,8 +47,7 @@ scriptencoding utf-8
   Plug 'tpope/vim-fugitive'
   " }}}
   " ui {{{
-    Plug 'isobit/vim-darcula-colors'
-    Plug 'tomasr/molokai'
+    Plug 'blueshirts/darcula'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-dispatch'
