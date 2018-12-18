@@ -1,13 +1,3 @@
-" functions {{{
-  function! s:show_documentation()
-      if &filetype ==# 'vim'
-        execute 'h '.expand('<cword>')
-      else
-        call CocAction('doHover')
-      endif
-  endfunction
-" }}}
-
 " settings {{{
   " Better display for messages
   set cmdheight=2
@@ -26,9 +16,6 @@
   nmap <silent> <Leader>gy <Plug>(coc-type-definition)
   nmap <silent> <Leader>gi <Plug>(coc-implementation)
   nmap <silent> <Leader>gr <Plug>(coc-references)
-
-  " Use K for show documentation in preview window
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
 
   " Remap for rename current word
   nmap <leader>rn <Plug>(coc-rename)
@@ -54,8 +41,7 @@ augroup coc-group
   " Highlight symbol under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
 
-  autocmd FileType typescript nmap <buffer> <silent> <C-]> <Plug>(coc-definition)
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+	autocmd CursorHoldI,CursorMovedI * call CocAction('showSignatureHelp')
 augroup END
 " }}}
 
