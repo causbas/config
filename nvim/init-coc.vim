@@ -21,8 +21,8 @@
   nmap <leader>rn <Plug>(coc-rename)
 
   " Remap for format selected region
-  vmap <leader>f  <Plug>(coc-format-selected)
-  nmap <leader>f  <Plug>(coc-format-selected)
+  vmap <leader>xf  <Plug>(coc-format-selected)
+  nmap <leader>xf  <Plug>(coc-format-selected)
 
   " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
   vmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -30,6 +30,9 @@
 
   " Remap for do codeAction of current line
   nmap <leader>aa  <Plug>(coc-codeaction)
+
+  " Show symbols of current buffer
+  nnoremap <silent> <space>ns  :<C-u>Denite coc-symbols<cr>
 " }}}
 
 " augroups {{{

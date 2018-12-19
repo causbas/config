@@ -108,6 +108,7 @@ scriptencoding utf-8
       let g:ale_sign_warning = '⚠'
     " }}}
     Plug 'junegunn/fzf.vim'
+    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   " }}}
   " textobj {{{
     Plug 'kana/vim-textobj-user'
