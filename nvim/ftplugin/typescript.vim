@@ -2,6 +2,8 @@
 " }}}
 
 setlocal suffixesadd+=.js
+" coc will do the linting
+ALEDisableBuffer
 
 " mappings {{{
 " Use K for show documentation in preview window
