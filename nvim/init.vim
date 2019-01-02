@@ -107,7 +107,10 @@ scriptencoding utf-8
       let g:ale_sign_error = '⨉'
       let g:ale_sign_warning = '⚠'
     " }}}
-    Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf.vim' " {{{
+      nnoremap <Leader>ss :execute 'Rg' expand('<cword>')<CR>
+      nnoremap <Leader>sf :execute 'BLines' expand('<cword>')<CR>
+    " }}}
     Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   " }}}
   " textobj {{{
