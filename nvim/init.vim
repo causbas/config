@@ -134,24 +134,24 @@ scriptencoding utf-8
       let g:airline#extensions#tabline#enabled = 1
       let g:airline#extensions#tabline#fnametruncate = 12
 
-  let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'c'  : 'C',
-      \ 'i'  : 'I',
-      \ 'ic' : 'I',
-      \ 'ix' : 'I',
-      \ 'n'  : 'N',
-      \ 'ni' : 'N',
-      \ 'no' : 'N',
-      \ 'R'  : 'R',
-      \ 'Rv' : 'R',
-      \ 's'  : 'S',
-      \ 'S'  : 'S',
-      \ '' : 'S',
-      \ 't'  : 'T',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '' : 'V',
+      let g:airline_mode_map = {
+          \ '__' : '-',
+          \ 'c'  : 'C',
+          \ 'i'  : 'I',
+          \ 'ic' : 'I',
+          \ 'ix' : 'I',
+          \ 'n'  : 'N',
+          \ 'ni' : 'N',
+          \ 'no' : 'N',
+          \ 'R'  : 'R',
+          \ 'Rv' : 'R',
+          \ 's'  : 'S',
+          \ 'S'  : 'S',
+          \ '' : 'S',
+          \ 't'  : 'T',
+          \ 'v'  : 'V',
+          \ 'V'  : 'V',
+          \ '' : 'V',
       \ }
     " }}}
     Plug 'vim-airline/vim-airline-themes'
@@ -252,10 +252,10 @@ scriptencoding utf-8
     "autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | qall | endif
   "augroup END
 
-  augroup ChangeWorkingDirectoryWhenEnteringBuffer
-    autocmd!
-    autocmd BufEnter * silent! lcd %:p:h
-  augroup END
+  "augroup ChangeWorkingDirectoryWhenEnteringBuffer
+    "autocmd!
+    "autocmd BufEnter * silent! lcd %:p:h
+  "augroup END
 " }}}
 
 " vim: fdm=marker ts=2 sts=2 sw=2 fdl=0
