@@ -96,8 +96,11 @@ scriptencoding utf-8
       let g:indent_guides_color_change_percent = 5
     " }}}
   " }}}
+  " javascript {{{
+    Plug 'pangloss/vim-javascript'
+  " }}}
   " typescript {{{
-  Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+    Plug 'leafgarland/typescript-vim'
   " }}}
   " misc {{{
     Plug 'ryanoasis/vim-devicons'
