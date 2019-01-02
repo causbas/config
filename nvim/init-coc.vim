@@ -41,7 +41,9 @@ augroup coc-group
   autocmd!
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   autocmd FileType typescript,javascript nnoremap <buffer> <silent> K :call CocAction('doHover')<CR>
-  autocmd FileType typescript,json,javascript nmap <buffer> <silent> <C-]> <Plug>(coc-definition)
+  autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-]> :call CocAction("jumpDefinition", "edit")<CR>
+  autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-W><C-]> :call CocAction("jumpDefinition", "split")<CR>
+  autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-W>] :call CocAction("jumpDefinition", "split")<CR>
 
   " Highlight symbol under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
