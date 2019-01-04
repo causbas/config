@@ -44,7 +44,7 @@ augroup coc-group
   autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-]> :call CocAction("jumpDefinition", "edit")<CR>
   autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-W><C-]> :call CocAction("jumpDefinition", "split")<CR>
   autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-W>] :call CocAction("jumpDefinition", "split")<CR>
-  autocmd FileType typescript setlocal suffixesadd+=.js
+  autocmd FileType typescript setlocal suffixesadd+=.js,.d.ts
   autocmd FileType typescript ALEDisableBuffer
 
   " Highlight symbol under cursor on CursorHold
