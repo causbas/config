@@ -72,15 +72,27 @@ scriptencoding utf-8
   " }}}
 " }}}
 
+" local config {{{
+  let g:mysettings = {}
+  let g:mysettings.completion_plugin = 'deoplete'
+
+  let localConfig = '~/.myvimrc'
+  if filereadable(expand(localConfig))
+    execute 'source' expand(localConfig)
+  endif
+" }}}
+
 " plugins {{{
   call plug#begin('~/.local/share/nvim/plugged')
-  " completion {{{
-    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " {{{
-      "let g:deoplete#enable_at_startup = 1
-    "" }}}
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " {{{
-      source ~/.config/nvim/init-coc.vim
+   " completion {{{
+    if g:mysettings.completion_plugin ==# 'deoplete' " {{{
+      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        let g:deoplete#enable_at_startup = 1
     " }}}
+    elseif g:mysettings.completion_plugin ==# 'coc' " {{{
+      Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+        source ~/.config/nvim/init-coc.vim
+    endif " }}}
   " }}}
   " editing {{{
     Plug 'editorconfig/editorconfig-vim'
