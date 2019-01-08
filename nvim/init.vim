@@ -5,16 +5,17 @@ scriptencoding utf-8
   syntax enable
   let mapleader = ' '
   let g:airline_theme='molokai'
-  set noswapfile
   set hidden
-  set ignorecase
-  set smartcase
-  "call AutoHighlightToggle()
-  set inccommand=nosplit
-  set foldmethod=syntax  " fold via syntax of files
-  set showmatch
-  set matchtime=2
 
+  " case {{{
+    set ignorecase
+    set smartcase
+  " }}}
+  " backup / undo {{{
+    set undofile
+    set backup
+    set noswapfile
+  " }}}
   " indent {{{
     set expandtab
     set tabstop=4
@@ -23,12 +24,10 @@ scriptencoding utf-8
     set shiftround
     set linebreak
   " }}}
-
   " key timeout {{{
     set timeoutlen=500  " mapping timeout
     set ttimeoutlen=50  " keycode timeout
   " }}}
-
   " ui {{{
     set mouse=a  " enable mouse
     set number
@@ -46,6 +45,9 @@ scriptencoding utf-8
     set title
     set noshowmode
 
+    set inccommand=nosplit
+    set foldmethod=syntax  " fold via syntax of files
+
     set scrolloff=10  " minimum number of lines above and below cursor
     set scrolljump=1  "minimum number of lines to scroll
     set sidescrolloff=5  " minimum number of columns to left and right of cursor
@@ -56,8 +58,10 @@ scriptencoding utf-8
       autocmd WinLeave * setlocal nocursorline
       autocmd WinEnter * setlocal cursorline
     augroup END
-  " }}}
 
+  set showmatch
+  set matchtime=2
+  " }}}
   " shell {{{
     set noshelltemp  " use pipes
     set shell=/bin/zsh
