@@ -6,6 +6,7 @@ scriptencoding utf-8
   let mapleader = ' '
   let g:airline_theme='molokai'
   set hidden
+  set isfname+=@-@ " include '@' in filenames
 
   " case {{{
     set ignorecase
