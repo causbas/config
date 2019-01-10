@@ -32,7 +32,9 @@
   nmap <leader>aa  <Plug>(coc-codeaction)
 
   " Show symbols of current buffer
-  nnoremap <silent> <space>ns  :<C-u>Denite coc-symbols<cr>
+  nnoremap <silent> <Leader>ns  :<C-u>Denite coc-symbols<CR>
+
+  nnoremap <Leader>qf :call CocAction("doQuickfix")<CR>
 " }}}
 
 " augroups {{{
