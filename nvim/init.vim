@@ -233,7 +233,7 @@ scriptencoding utf-8
     nnoremap <script> <silent> <leader>tl :call ToggleLocationList()<CR>
     nnoremap <script> <silent> <leader>tq :call ToggleQuickfixList()<CR>
   " }}}
-  " tools {{{
+  " plugins {{{
     " fzf {{{
     nnoremap <Leader>ff :Files<CR>
     nnoremap <Leader>bb :Buffers<CR>
@@ -241,6 +241,9 @@ scriptencoding utf-8
     nnoremap <Leader>gf :GFiles<CR>
     nnoremap <Leader>sh :History/<CR>
     nnoremap <M-;> :History:<CR>
+    " }}}
+    " fugitive {{{
+      nnoremap <Leader>gb :Gblame<CR>
     " }}}
   " }}}
 " }}}
