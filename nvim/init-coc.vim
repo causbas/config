@@ -20,10 +20,6 @@
   " Remap for rename current word
   nmap <leader>rn <Plug>(coc-rename)
 
-  " Remap for format selected region
-  vmap <leader>xf  <Plug>(coc-format-selected)
-  nmap <leader>xf  <Plug>(coc-format-selected)
-
   " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
   vmap <leader>a  <Plug>(coc-codeaction-selected)
   nmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -35,6 +31,7 @@
   nnoremap <silent> <Leader>ns  :<C-u>Denite coc-symbols<CR>
 
   nnoremap <Leader>qf :call CocAction("doQuickfix")<CR>
+  nnoremap <Leader>ds :call CocAction("showSignatureHelp")<CR>
 " }}}
 
 " augroups {{{
