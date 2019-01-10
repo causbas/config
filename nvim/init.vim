@@ -14,7 +14,6 @@ scriptencoding utf-8
   " }}}
   " backup / undo {{{
     set undofile
-    set backup
     set noswapfile
   " }}}
   " indent {{{
