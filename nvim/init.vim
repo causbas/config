@@ -120,7 +120,7 @@ scriptencoding utf-8
   " }}}
   " misc {{{
     Plug 'ryanoasis/vim-devicons'
-    Plug 'vim-scripts/bufkill.vim'
+    Plug 'qpkorr/vim-bufkill'
     Plug 'w0rp/ale' " {{{
       let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '✔︎']
       let g:ale_sign_error = '⨉'
