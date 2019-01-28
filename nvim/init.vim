@@ -217,6 +217,10 @@ scriptencoding utf-8
   vnoremap > >gv
   vnoremap < <gv
   nnoremap yo/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+
+  " add j/k to jumplist if > 1
+  nnoremap <silent> k :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'k'<CR>
+  nnoremap <silent> j :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'j'<CR>
   " windows {{{
     " focus
     nnoremap <M-h> <C-w>h
