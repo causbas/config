@@ -36,13 +36,14 @@
 
 " augroups {{{
 " Setup formatexpr specified filetype(s).
+let s:coc_filetypes_autocmd = 'autocmd FileType typescript,json,javascript,html,css'
 augroup coc-group
   autocmd!
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> K :call CocAction('doHover')<CR>
-  autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-]> :call CocAction("jumpDefinition", "edit")<CR>
-  autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-W><C-]> :call CocAction("jumpDefinition", "split")<CR>
-  autocmd FileType typescript,json,javascript nnoremap <buffer> <silent> <C-W>] :call CocAction("jumpDefinition", "split")<CR>
+  execute s:coc_filetypes_autocmd 'nnoremap <buffer> <silent> K :call CocAction("doHover")<CR>'
+  execute s:coc_filetypes_autocmd 'nnoremap <buffer> <silent> <C-]> :call CocAction("jumpDefinition", "edit")<CR>'
+  execute s:coc_filetypes_autocmd 'nnoremap <buffer> <silent> <C-W><C-]> :call CocAction("jumpDefinition", "split")<CR>'
+  execute s:coc_filetypes_autocmd 'nnoremap <buffer> <silent> <C-W>] :call CocAction("jumpDefinition", "split")<CR>'
   autocmd FileType typescript setlocal suffixesadd+=.js,.d.ts
   autocmd FileType typescript ALEDisableBuffer
 
