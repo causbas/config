@@ -130,7 +130,6 @@ scriptencoding utf-8
       nnoremap <Leader>ss :execute 'Rg' expand('<cword>')<CR>
       nnoremap <Leader>sf :execute 'BLines' expand('<cword>')<CR>
     " }}}
-    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   " }}}
   " textobj {{{
     Plug 'kana/vim-textobj-user'

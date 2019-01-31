@@ -5,6 +5,9 @@
   " Smaller updatetime for CursorHold & CursorHoldI
   set updatetime=300
 
+  " don't give |ins-completion-menu| messages.
+  set shortmess+=c
+
   let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
   let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
@@ -28,7 +31,7 @@
   nmap <leader>aa  <Plug>(coc-codeaction)
 
   " Show symbols of current buffer
-  nnoremap <silent> <Leader>ns  :<C-u>Denite coc-symbols<CR>
+  nnoremap <silent> <space>ns  :<C-u>CocList -I symbols<cr>
 
   nnoremap <Leader>qf :call CocAction("doQuickfix")<CR>
   nnoremap <Leader>ds :call CocAction("showSignatureHelp")<CR>
