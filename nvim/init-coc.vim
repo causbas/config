@@ -42,7 +42,7 @@
 let s:coc_filetypes_autocmd = 'autocmd FileType typescript,json,javascript,html,css'
 augroup coc-group
   autocmd!
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  execute s:coc_filetypes_autocmd "setl formatexpr=CocAction('formatSelected')"
   execute s:coc_filetypes_autocmd 'nnoremap <buffer> <silent> K :call CocAction("doHover")<CR>'
   execute s:coc_filetypes_autocmd 'nnoremap <buffer> <silent> <C-]> :call CocAction("jumpDefinition", "edit")<CR>'
   execute s:coc_filetypes_autocmd 'nnoremap <buffer> <silent> <C-W><C-]> :call CocAction("jumpDefinition", "split")<CR>'
