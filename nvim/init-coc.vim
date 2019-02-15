@@ -53,7 +53,7 @@ augroup coc-group
   " Highlight symbol under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
 
-	autocmd CursorHoldI,CursorMovedI * call CocAction('showSignatureHelp')
+	autocmd CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
 augroup END
 " }}}
 
