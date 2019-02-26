@@ -100,17 +100,17 @@ scriptencoding utf-8
   " }}}
   " editing {{{
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'tpope/vim-surround'
     Plug 'vim-scripts/argtextobj.vim'
     Plug 'scrooloose/nerdcommenter'
     Plug 'tpope/vim-speeddating'
     Plug 'thinca/vim-visualstar'
     Plug 'terryma/vim-expand-region'
     Plug 'terryma/vim-multiple-cursors'
-    Plug 'nathanaelkane/vim-indent-guides' " {{{
-      let g:indent_guides_start_level = 1
-      let g:indent_guides_enable_on_vim_startup = 1
-      let g:indent_guides_color_change_percent = 5
-    " }}}
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-dispatch'
+    Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-unimpaired'
   " }}}
   " javascript {{{
     Plug 'pangloss/vim-javascript'
@@ -127,6 +127,12 @@ scriptencoding utf-8
       let g:ale_sign_warning = '⚠'
     " }}}
     Plug 'junegunn/fzf.vim' " {{{
+      nnoremap <Leader>ff :Files<CR>
+      nnoremap <Leader>bb :Buffers<CR>
+      nnoremap <Leader>fr :History<CR>
+      nnoremap <Leader>gf :GFiles?<CR>
+      nnoremap <Leader>sh :History/<CR>
+      nnoremap <M-;> :History:<CR>
       nnoremap <Leader>ss :execute 'Rg' expand('<cword>')<CR>
       nnoremap <Leader>sf :execute 'BLines' expand('<cword>')<CR>
     " }}}
@@ -139,15 +145,12 @@ scriptencoding utf-8
   " }}}
   " scm {{{
   Plug 'mhinz/vim-signify'
-  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive' " {{{
+      nnoremap <Leader>gb :Gblame<CR>
+    " }}}
   " }}}
   " ui {{{
     Plug 'blueshirts/darcula'
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-repeat'
-    Plug 'tpope/vim-dispatch'
-    Plug 'tpope/vim-eunuch'
-    Plug 'tpope/vim-unimpaired'
     Plug 'machakann/vim-highlightedyank'
     Plug 'vim-airline/vim-airline' " {{{
       let g:airline_powerline_fonts = 1
@@ -178,6 +181,11 @@ scriptencoding utf-8
     Plug 'vim-airline/vim-airline-themes'
     Plug 'milkypostman/vim-togglelist' " {{{
       let g:toggle_list_no_mappings = 1
+    " }}}
+    Plug 'nathanaelkane/vim-indent-guides' " {{{
+      let g:indent_guides_start_level = 1
+      let g:indent_guides_enable_on_vim_startup = 1
+      let g:indent_guides_color_change_percent = 5
     " }}}
   " }}}
   call plug#end()
@@ -235,18 +243,6 @@ scriptencoding utf-8
     nnoremap <script> <silent> <leader>tl :call ToggleLocationList()<CR>
     nnoremap <script> <silent> <leader>tq :call ToggleQuickfixList()<CR>
   " }}}
-  " plugins {{{
-    " fzf {{{
-    nnoremap <Leader>ff :Files<CR>
-    nnoremap <Leader>bb :Buffers<CR>
-    nnoremap <Leader>fr :History<CR>
-    nnoremap <Leader>gf :GFiles<CR>
-    nnoremap <Leader>sh :History/<CR>
-    nnoremap <M-;> :History:<CR>
-    " }}}
-    " fugitive {{{
-      nnoremap <Leader>gb :Gblame<CR>
-    " }}}
   " }}}
 " }}}
 
