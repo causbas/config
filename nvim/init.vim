@@ -135,6 +135,10 @@ scriptencoding utf-8
       nnoremap <M-;> :History:<CR>
       nnoremap <Leader>ss :execute 'Rg' expand('<cword>')<CR>
       nnoremap <Leader>sf :execute 'BLines' expand('<cword>')<CR>
+
+      if isdirectory($HOME.'/.fzf')
+        Plug '~/.fzf'
+      endif
     " }}}
   " }}}
   " textobj {{{
