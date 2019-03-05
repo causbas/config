@@ -1,9 +1,9 @@
 {
     "typescript.preferences.quoteStyle": "double",
     "javascript.preferences.quoteStyle": "double",
-    "coc.preferences.minTriggerInputLength": 0,
-    "coc.preferences.diagnostic.errorSign": "⨉",
-    "coc.preferences.diagnostic.warningSign": "⚠",
-    "coc.preferences.diagnostic.infoSign": "..",
-    "coc.preferences.diagnostic.hintSign": "!!"
+    "suggest.minTriggerInputLength": 0,
+    "diagnostic.errorSign": "⨉",
+    "diagnostic.warningSign": "⚠",
+    "diagnostic.infoSign": "..",
+    "diagnostic.hintSign": "!!"
 }
