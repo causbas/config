@@ -1,4 +1,4 @@
-alias grep='grep --color=always'
+alias grep='grep --color=auto'
 alias rgrep='grep -r'
 alias less='less -R'
 # diff uses full terminal width
