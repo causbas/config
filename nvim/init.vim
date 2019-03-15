@@ -161,6 +161,7 @@ scriptencoding utf-8
       let g:airline#extensions#tabline#fnamecollapse = 1
       let g:airline#extensions#tabline#enabled = 1
       let g:airline#extensions#tabline#fnametruncate = 12
+      let g:airline_section_b = 0 " disable vcs info
 
       let g:airline_mode_map = {
           \ '__' : '-',
