@@ -31,7 +31,7 @@
   nmap <leader>aa  <Plug>(coc-codeaction)
 
   " Show symbols of current buffer
-  nnoremap <silent> <space>ns  :<C-u>CocList -I symbols<cr>
+  nnoremap <silent> <Leader>no :CocList outline<CR>
 
   nnoremap <Leader>qf :call CocAction("doQuickfix")<CR>
   nnoremap <Leader>ds :call CocAction("showSignatureHelp")<CR>
