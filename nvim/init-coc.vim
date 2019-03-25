@@ -36,8 +36,8 @@
   nnoremap <Leader>qf :call CocAction("doQuickfix")<CR>
   nnoremap <Leader>ds :call CocAction("showSignatureHelp")<CR>
 
-  nnoremap <silent> [d <Plug>(coc-diagnostic-prev)
-  nnoremap <silent> ]d <Plug>(coc-diagnostic-next)
+  nmap <silent> [d <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]d <Plug>(coc-diagnostic-next)
 " }}}
 
 " augroups {{{
