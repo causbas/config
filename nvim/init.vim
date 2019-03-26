@@ -140,6 +140,10 @@ scriptencoding utf-8
         Plug '~/.fzf'
       endif
     " }}}
+    Plug 'chrisbra/csv.vim' " {{{
+      let g:csv_highlight_column = 'y'
+      let g:no_csv_maps = '1'
+    " }}}
   " }}}
   " textobj {{{
     Plug 'kana/vim-textobj-user'
