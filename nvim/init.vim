@@ -59,8 +59,14 @@ scriptencoding utf-8
       autocmd WinEnter * setlocal cursorline
     augroup END
 
-  set showmatch
-  set matchtime=2
+    set showmatch
+    set matchtime=2
+
+    " Smaller updatetime for CursorHold & CursorHoldI
+    set updatetime=300
+
+    " don't give |ins-completion-menu| messages.
+    set shortmess+=c
   " }}}
   " shell {{{
     set noshelltemp  " use pipes
@@ -91,11 +97,20 @@ scriptencoding utf-8
    " completion {{{
     if g:mysettings.completion_plugin ==# 'deoplete' " {{{
       Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        let g:deoplete#enable_at_startup = 1
+      let g:deoplete#enable_at_startup = 1
     " }}}
     elseif g:mysettings.completion_plugin ==# 'coc' " {{{
       Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-        source ~/.config/nvim/init-coc.vim
+
+      " Better display for messages
+      set cmdheight=2
+
+      augroup coc-filetypes
+        autocmd!
+        autocmd FileType typescript,json,javascript,html,css runtime coc-filetypes.vim
+      augroup END
+      let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+      let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
     endif " }}}
   " }}}
   " editing {{{
