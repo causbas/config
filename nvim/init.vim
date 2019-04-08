@@ -267,7 +267,6 @@ scriptencoding utf-8
     nnoremap <script> <silent> <leader>tl :call ToggleLocationList()<CR>
     nnoremap <script> <silent> <leader>tq :call ToggleQuickfixList()<CR>
   " }}}
-  " }}}
 " }}}
 
 " terminal {{{
