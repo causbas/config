@@ -1,6 +1,8 @@
 setlocal formatexpr=CocAction('formatSelected')
 
 " mappings {{{
+  nnoremap <silent> <Leader>nd :CocList diagnostics<CR>
+
   " Remap keys for gotos
   nmap <buffer> <silent> <Leader>gd <Plug>(coc-definition)
   nmap <buffer> <silent> <Leader>gy <Plug>(coc-type-definition)
