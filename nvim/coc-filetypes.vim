@@ -30,6 +30,23 @@ setlocal formatexpr=CocAction('formatSelected')
   nnoremap <buffer> <silent> <C-]> :call CocAction("jumpDefinition", "edit")<CR>
   nnoremap <buffer> <silent> <C-W><C-]> :call CocAction("jumpDefinition", "split")<CR>
   nnoremap <buffer> <silent> <C-W>] :call CocAction("jumpDefinition", "split")<CR>
+
+  " snippets {{{
+    " Use <C-l> for trigger snippet expand.
+    imap <C-l> <Plug>(coc-snippets-expand)
+
+    " Use <C-j> for select text for visual placeholder of snippet.
+    vmap <C-j> <Plug>(coc-snippets-select)
+
+    " Use <C-j> for jump to next placeholder, it's default of coc.nvim
+    let g:coc_snippet_next = '<c-j>'
+
+    " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+    let g:coc_snippet_prev = '<c-k>'
+
+    " Use <C-j> for both expand and jump (make expand higher priority.)
+    imap <C-j> <Plug>(coc-snippets-expand-jump)
+  " }}}
 " }}}
 
 " augroups {{{
@@ -39,7 +56,7 @@ augroup coc-group
   " Highlight symbol under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
 
-	autocmd CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
+	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup END
 " }}}
 
