@@ -100,7 +100,7 @@ scriptencoding utf-8
       let g:deoplete#enable_at_startup = 1
     " }}}
     elseif g:mysettings.completion_plugin ==# 'coc' " {{{
-      Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+      Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
       " Better display for messages
       set cmdheight=2
