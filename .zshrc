@@ -111,15 +111,19 @@ if ! zplug check --verbose; then
     fi
 fi
 zplug load
+
+# zsh-syntax-highlighting
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[path]='bold'
 
-# powerlevel9k config
+# zsh-autosuggestions
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+# powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir vcs)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
-# Elementos de la barra
+# bar
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
 POWERLEVEL9K_FOLDER_ICON=""
@@ -138,7 +142,7 @@ POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='white'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
 
-# `git hub colors`
+# vcs
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='236'
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='255'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='236'
