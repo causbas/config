@@ -88,7 +88,7 @@ export KEYTIMEOUT=1
 
 # zplug
 source ~/.zplug/init.zsh
-zplug "bhilburn/powerlevel9k", as:theme
+zplug 'romkatv/powerlevel10k', use:powerlevel10k.zsh-theme
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
