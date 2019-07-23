@@ -13,17 +13,17 @@ setlocal formatexpr=CocAction('formatSelected')
   nmap <buffer> <Leader>rn <Plug>(coc-rename)
 
   " Remap for do codeAction of selected region, ex: `<Leader>aap` for current paragraph
-  vmap <buffer> <Leader>a  <Plug>(coc-codeaction-selected)
-  nmap <buffer> <Leader>a  <Plug>(coc-codeaction-selected)
+  vmap <buffer> <silent> <Leader>a  <Plug>(coc-codeaction-selected)
+  nmap <buffer> <silent> <Leader>a  <Plug>(coc-codeaction-selected)
 
   " Remap for do codeAction of current line
-  nmap <buffer> <Leader>aa  <Plug>(coc-codeaction)
+  nmap <buffer> <silent> <Leader>aa  <Plug>(coc-codeaction)
 
   " Show symbols of current buffer
   nnoremap <buffer> <silent> <Leader>no :CocList outline<CR>
 
-  nnoremap <buffer> <Leader>qf :call CocAction("doQuickfix")<CR>
-  nnoremap <buffer> <Leader>ds :call CocAction("showSignatureHelp")<CR>
+  nnoremap <buffer> <silent> <Leader>qf :call CocAction("doQuickfix")<CR>
+  nnoremap <buffer> <silent> <Leader>ds :call CocAction("showSignatureHelp")<CR>
 
   nmap <buffer> <silent> [d <Plug>(coc-diagnostic-prev)
   nmap <buffer> <silent> ]d <Plug>(coc-diagnostic-next)
