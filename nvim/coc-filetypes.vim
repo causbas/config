@@ -10,7 +10,8 @@ setlocal formatexpr=CocAction('formatSelected')
   nmap <buffer> <silent> <Leader>gr <Plug>(coc-references)
 
   " Remap for rename current word
-  nmap <buffer> <Leader>rn <Plug>(coc-rename)
+  nmap <buffer> <silent> <Leader>rn <Plug>(coc-rename)
+  nmap <buffer> <silent> <Leader>rf <Plug>(coc-refactor)
 
   " Remap for do codeAction of selected region, ex: `<Leader>aap` for current paragraph
   vmap <buffer> <silent> <Leader>a  <Plug>(coc-codeaction-selected)
