@@ -20,8 +20,8 @@ setlocal formatexpr=CocAction('formatSelected')
   " Remap for do codeAction of current line
   nmap <buffer> <silent> <Leader>aa  <Plug>(coc-codeaction)
 
-  " Show symbols of current buffer
   nnoremap <buffer> <silent> <Leader>no :CocList outline<CR>
+  nnoremap <buffer> <silent> <Leader>ns :CocList --interactive symbols<CR>
 
   nnoremap <buffer> <silent> <Leader>qf :call CocAction("doQuickfix")<CR>
   nnoremap <buffer> <silent> <Leader>ds :call CocAction("showSignatureHelp")<CR>
