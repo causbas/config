@@ -270,17 +270,4 @@ scriptencoding utf-8
   highlight Cursorline guifg=NONE
 " }}}
 
-" augroups {{{
-  " will prevent help window from opening if buffer list is empty
-  "augroup QuitAfterDeletingLastBuffer
-    "autocmd!
-    "autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | qall | endif
-  "augroup END
-
-  "augroup ChangeWorkingDirectoryWhenEnteringBuffer
-    "autocmd!
-    "autocmd BufEnter * silent! lcd %:p:h
-  "augroup END
-" }}}
-
 " vim: fdm=marker ts=2 sts=2 sw=2 fdl=0
