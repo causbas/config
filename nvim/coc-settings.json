@@ -6,5 +6,9 @@
     "diagnostic.warningSign": "⚠",
     "diagnostic.infoSign": "..",
     "diagnostic.hintSign": "!!",
-    "codeLens.enable": true
+    "codeLens.enable": true,
+    "eslint.filetypes": [
+        "typescript",
+        "typescriptreact"
+    ]
 }
