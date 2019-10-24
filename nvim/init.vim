@@ -218,9 +218,6 @@ scriptencoding utf-8
   colorscheme darcula-mine
 " }}}
 
-" functions {{{
-" }}}
-
 " mappings {{{
   nnoremap <M-CR> o<Esc>
   nnoremap Y y$
