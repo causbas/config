@@ -219,28 +219,6 @@ scriptencoding utf-8
 " }}}
 
 " functions {{{
-  " Highlight all instances of word under cursor, when idle.
-  " Useful when studying strange source code.
-  nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
-  function! AutoHighlightToggle()
-    let @/ = ''
-    if exists('#auto_highlight')
-      au! auto_highlight
-      augroup! auto_highlight
-      setl updatetime=4000
-      " echo 'Highlight current word: off'
-      return 0
-    else
-      augroup auto_highlight
-        au!
-        au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-      augroup end
-      setl updatetime=20
-      " echo 'Highlight current word: ON'
-      return 1
-    endif
-  endfunction
-
 " }}}
 
 " mappings {{{
@@ -248,7 +226,6 @@ scriptencoding utf-8
   nnoremap Y y$
   vnoremap > >gv
   vnoremap < <gv
-  nnoremap yo/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
   " add j/k to jumplist if > 1
   nnoremap <silent> k :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'k'<CR>
