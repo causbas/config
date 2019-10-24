@@ -224,6 +224,8 @@ scriptencoding utf-8
   vnoremap > >gv
   vnoremap < <gv
 
+  nnoremap <Leader>sg :silent grep <cword> <Bar> copen<CR>
+
   " add j/k to jumplist if > 1
   nnoremap <silent> k :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'k'<CR>
   nnoremap <silent> j :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'j'<CR>
