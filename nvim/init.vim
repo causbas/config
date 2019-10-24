@@ -127,6 +127,7 @@ scriptencoding utf-8
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-unimpaired'
     Plug 'AndrewRadev/linediff.vim'
+    Plug 'stefandtw/quickfix-reflector.vim'
   " }}}
   " javascript {{{
     Plug 'pangloss/vim-javascript'
