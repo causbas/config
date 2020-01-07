@@ -175,7 +175,7 @@ scriptencoding utf-8
     " }}}
   " }}}
   " ui {{{
-    Plug 'blueshirts/darcula'
+    Plug 'doums/darcula'
     Plug 'machakann/vim-highlightedyank'
     Plug 'vim-airline/vim-airline' " {{{
       let g:airline_powerline_fonts = 1
@@ -216,7 +216,7 @@ scriptencoding utf-8
   " }}}
   call plug#end()
 
-  colorscheme darcula-mine
+  colorscheme darcula
 " }}}
 
 " mappings {{{
