@@ -34,6 +34,13 @@ setlocal formatexpr=CocAction('formatSelected')
   nnoremap <buffer> <silent> <C-W><C-]> :call CocAction("jumpDefinition", "split")<CR>
   nnoremap <buffer> <silent> <C-W>] :call CocAction("jumpDefinition", "split")<CR>
 
+  " Introduce function text object
+  " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+  xmap if <Plug>(coc-funcobj-i)
+  xmap af <Plug>(coc-funcobj-a)
+  omap if <Plug>(coc-funcobj-i)
+  omap af <Plug>(coc-funcobj-a)
+
   " snippets {{{
     " Use <C-l> for trigger snippet expand.
     imap <C-l> <Plug>(coc-snippets-expand)
