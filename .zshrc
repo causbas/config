@@ -58,10 +58,13 @@ setopt inc_append_history
 setopt share_history
 setopt hist_ignore_space
 
-# gnome-keyring
-if [ -n "$DESKTOP_SESSION" ];then
+if [ -n "$DESKTOP_SESSION" ]
+then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
+else
+    # disable gui prompt for gpg
+    export GPG_TTY=$(tty)
 fi
 
 # Updates editor information when the keymap changes.
