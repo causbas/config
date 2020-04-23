@@ -6,5 +6,5 @@ alias nvwindow="nvr -cc 'wincmd w'"
 function nvsplit() { nvr -c "split $@" }
 function nvvsplit() { nvr -c "vsplit $@" }
 function nvcwdsync() { nvr -c "cd $(pwd)"; }
-# sync buffer-local working directory with shell
-function chpwd() { nvr -c "lcd $(pwd)"; }
+# sync working directory with shell
+function chpwd() { nvr -c "tcd $(pwd)"; }
