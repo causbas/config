@@ -165,6 +165,7 @@ scriptencoding utf-8
     Plug 'junegunn/fzf.vim' " {{{
       nnoremap <Leader>ff :Files<CR>
       nnoremap <Leader>bb :Buffers<CR>
+      nnoremap <Leader>ww :Windows<CR>
       nnoremap <Leader>fr :History<CR>
       nnoremap <Leader>gf :GFiles?<CR>
       nnoremap <Leader>sh :History/<CR>
