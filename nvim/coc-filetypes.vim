@@ -18,7 +18,7 @@ setlocal formatexpr=CocAction('formatSelected')
   nmap <buffer> <silent> <Leader>a  <Plug>(coc-codeaction-selected)
 
   " Remap for do codeAction of current line
-  nmap <buffer> <silent> <Leader>aa  <Plug>(coc-codeaction)
+  nmap <buffer> <silent> <Leader>aa  <Plug>(coc-codeaction-line)
 
   nnoremap <buffer> <silent> <Leader>no :CocList outline<CR>
   nnoremap <buffer> <silent> <Leader>ns :CocList --interactive symbols<CR>
