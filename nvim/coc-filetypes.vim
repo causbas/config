@@ -63,9 +63,6 @@ setlocal formatexpr=CocAction('formatSelected')
 augroup coc-group
   autocmd!
 
-  " Highlight symbol under cursor on CursorHold
-  autocmd CursorHold * silent call CocActionAsync('highlight')
-
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup END
 " }}}
