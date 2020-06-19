@@ -115,10 +115,6 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-# zsh-syntax-highlighting
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[path]='bold'
-
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
