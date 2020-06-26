@@ -171,7 +171,9 @@ scriptencoding utf-8
       nnoremap <Leader>sh :History/<CR>
       nnoremap <M-;> :History:<CR>
       nnoremap <Leader>ss :execute 'Rg' expand('<cword>')<CR>
+      vnoremap <Leader>ss y:Rg <C-R>"<CR>
       nnoremap <Leader>sf :execute 'BLines' expand('<cword>')<CR>
+      vnoremap <Leader>sf y:BLines <C-R>"<CR>
 
       if isdirectory($HOME.'/.fzf')
         Plug '~/.fzf'
