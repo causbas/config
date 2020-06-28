@@ -14,6 +14,10 @@ scriptencoding utf-8
   " }}}
   " backup / undo {{{
     set undofile
+    augroup UndoFile
+      autocmd!
+      autocmd BufWritePre /tmp/* setlocal noundofile
+    augroup END
     set noswapfile
   " }}}
   " indent {{{
