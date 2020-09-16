@@ -14,7 +14,7 @@ setlocal formatexpr=CocAction('formatSelected')
   nmap <buffer> <silent> <Leader>rf <Plug>(coc-refactor)
 
   " Remap for do codeAction of selected region, ex: `<Leader>aap` for current paragraph
-  vmap <buffer> <silent> <Leader>a  <Plug>(coc-codeaction-selected)
+  xmap <buffer> <silent> <Leader>a  <Plug>(coc-codeaction-selected)
   nmap <buffer> <silent> <Leader>a  <Plug>(coc-codeaction-selected)
 
   " Remap for do codeAction of current line
@@ -46,7 +46,7 @@ setlocal formatexpr=CocAction('formatSelected')
     imap <C-l> <Plug>(coc-snippets-expand)
 
     " Use <C-j> for select text for visual placeholder of snippet.
-    vmap <C-j> <Plug>(coc-snippets-select)
+    xmap <C-j> <Plug>(coc-snippets-select)
 
     " Use <C-j> for jump to next placeholder, it's default of coc.nvim
     let g:coc_snippet_next = '<c-j>'
