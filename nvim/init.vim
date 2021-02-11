@@ -14,6 +14,7 @@ scriptencoding utf-8
   " }}}
   " backup / undo {{{
     set undofile
+    set undolevels=10000
     augroup UndoFile
       autocmd!
       autocmd BufWritePre /tmp/* setlocal noundofile
