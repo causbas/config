@@ -5,9 +5,5 @@
     "diagnostic.errorSign": "⨉",
     "diagnostic.warningSign": "⚠",
     "diagnostic.infoSign": "..",
-    "diagnostic.hintSign": "!!",
-    "eslint.filetypes": [
-        "typescript",
-        "typescriptreact"
-    ]
+    "diagnostic.hintSign": "!!"
 }
