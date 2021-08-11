@@ -46,7 +46,7 @@ scriptencoding utf-8
     set wildignorecase
     " keep fold level when switching buffers
     set foldlevelstart=-1
-    set clipboard+=unnamedplus
+    set clipboard+=unnamed,unnamedplus
     set title
     set noshowmode
 
