@@ -198,7 +198,7 @@ scriptencoding utf-8
   " scm {{{
   Plug 'mhinz/vim-signify'
   Plug 'tpope/vim-fugitive' " {{{
-      nnoremap <Leader>gb :Gblame<CR>
+      nnoremap <Leader>gb :Git blame<CR>
     " }}}
   " }}}
   " ui {{{
