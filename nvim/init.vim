@@ -64,6 +64,7 @@ scriptencoding utf-8
       autocmd WinEnter * setlocal cursorline
     augroup END
 
+    set matchpairs+=<:>
     set showmatch
     set matchtime=2
 
