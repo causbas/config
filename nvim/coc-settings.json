@@ -2,6 +2,7 @@
     "typescript.preferences.quoteStyle": "double",
     "javascript.preferences.quoteStyle": "double",
     "suggest.minTriggerInputLength": 0,
+    "suggest.noselect": true,
     "diagnostic.errorSign": "⨉",
     "diagnostic.warningSign": "⚠",
     "diagnostic.infoSign": "..",
