@@ -197,7 +197,10 @@ scriptencoding utf-8
     Plug 'lucapette/vim-textobj-underscore'
   " }}}
   " scm {{{
-  Plug 'mhinz/vim-signify'
+  Plug 'mhinz/vim-signify' " {{{
+      nnoremap <Leader>gh :SignifyHunkDiff<CR>
+      nnoremap <Leader>gr :SignifyHunkUndo<CR>
+  " }}}
   Plug 'tpope/vim-fugitive' " {{{
       nnoremap <Leader>gb :Git blame<CR>
     " }}}
