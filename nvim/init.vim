@@ -198,8 +198,8 @@ scriptencoding utf-8
   " }}}
   " scm {{{
   Plug 'mhinz/vim-signify' " {{{
-      nnoremap <Leader>gh :SignifyHunkDiff<CR>
-      nnoremap <Leader>gr :SignifyHunkUndo<CR>
+      nnoremap <Leader>ghd :SignifyHunkDiff<CR>
+      nnoremap <Leader>ghr :SignifyHunkUndo<CR>
   " }}}
   Plug 'tpope/vim-fugitive' " {{{
       nnoremap <Leader>gb :Git blame<CR>
